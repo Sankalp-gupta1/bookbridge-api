@@ -1,0 +1,48 @@
+{
+  "origin": "https://books.toscrape.com",
+  "captured_at": "2026-10-03T08:29:57.014762+00:00",
+  "files": {
+    "root.html": {
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "9fdd63da34161ebd13408d7a85105f83ec3c9f351c5d77cd0aa578790e121c1e"
+    },
+    "page2.html": {
+      "path": "/catalogue/page-2.html",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "0965cf9b09b490d30cf971167528ddf31cfebf2ae543027a7632958fc745b57a"
+    },
+    "page50.html": {
+      "path": "/catalogue/page-50.html",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "536fcceddc8f2f523719d16be0c3f1912064a3d20bb1f6c17974afd266137565"
+    },
+    "book.html": {
+      "path": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "a6e572bec156bf80ff3149b89b6d218cdcf8866ccc26ccf69a5431db8e142c6a"
+    },
+    "poetry.html": {
+      "path": "/catalogue/category/books/poetry_23/index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "bcd9e2b32175779a12bc7d369c8fe8445d29353a58f3dd2513d66bf7e86dc116"
+    },
+    "travel.html": {
+      "path": "/catalogue/category/books/travel_2/index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "12647dc86ef4e070b3c47e3a152462545f99c53d9d8d3130636b921e078d8766"
+    },
+    "robots.txt": {
+      "path": "/robots.txt",
+      "status": 404,
+      "content_type": "text/html",
+      "sha256": "6ad407809dc8e6d079dfbd21823508dffb897b97a27eb8ae43acbea1b7c8df0d"
+    }
+  }
+}

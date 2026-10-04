@@ -1,0 +1,17 @@
+# Limitations and the appropriate long-term fix
+
+BookBridge is a read-only adapter over public HTML, not a replacement for a first-party catalogue integration.
+
+**Source choice.** Books to Scrape is an intentionally scrapeable fictional bookstore. No documented first-party API was found on the inspected site or its publisher's page. This makes the demonstration reproducible and avoids real customer data. It does not establish permission to scrape an unrelated merchant, and the source's prices and ratings must not be used for real purchasing decisions.
+
+**HTML drift.** CSS selectors, table labels, currency formatting and URL slugs are not stable contracts. The parser validates required fields, counts and pagination, then returns `SOURCE_CHANGED` rather than an apparently successful empty result. Some changes can still pass these checks; drift detection cannot prove semantic correctness. Captured regression fixtures and live smoke tests reduce this risk but cannot eliminate it.
+
+**Search and freshness.** Search scans at most five pages per call, in source order, and exposes its coverage. It is title substring search, not semantic search. `complete=false` must never be presented as “no such book exists.” A five-minute cache can be stale and different pages can reflect different moments. Stock is an observation, not a reservation or transactional availability guarantee. There is no background full-catalogue crawler or persistent search index.
+
+**Availability and operations.** Upstream downtime, denial, robots changes, unexpected content or a network timeout can make the wrapper unavailable. There is no authentication, distributed cache/limiter, tenant isolation, high-availability deployment or production SLA. Limits are per process, so use one worker. The local API is intended for loopback evaluation. The demo does not test production load or a real merchant workflow. Fixture mode contains only the pages in its manifest and labels every response accordingly.
+
+**Security and agent usage.** The service reads only public, allowlisted HTTPS paths and does not follow redirects or accept arbitrary source URLs. This narrows SSRF exposure but is not a replacement for production egress controls. Source descriptions are untrusted text: an LLM consumer should treat them as data, never as instructions. The wrapper cannot add items to baskets, purchase, write inventory, read orders or access accounts.
+
+**Long-term fix.** Obtain the merchant/site owner's authorized, versioned API or export feed. Use stable product/variant IDs, explicit currency and tax fields, documented stock semantics, cursor pagination, scoped authentication, quotas, `updated_at` values and a change feed/webhooks. Put that client behind the same service interface so callers can keep the JSON contract while the HTML adapter is retired. Add contract tests against an owner-managed sandbox and reconcile the feed with periodic snapshots.
+
+For Agent Studio use, wrap the approved read operations in narrow tools, enforce tenant-scoped credentials and authorization outside the model, and attach freshness/coverage to every tool result. Any future write operation needs its own authorization, idempotency and review policy. If an official integration is unavailable, agree an explicit access arrangement with the owner and operate a monitored adapter as a temporary bridge; browser stealth or bypassing access controls is not the long-term fix.

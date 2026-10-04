@@ -1,0 +1,399 @@
+{
+  "tested_at": "2026-10-03T14:22:12.159995+00:00",
+  "mode": "live",
+  "status": "pass",
+  "checks_passed": 16,
+  "observed_category_count": 50,
+  "checks": [
+    {
+      "case": "process health",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "first page and exact GBP price",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "repeat request uses cache",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "second page",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "last page has no next page",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "category list",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "category filtering",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "book detail and stock",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "partial title search reports coverage",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "complete category search with no matches",
+      "status": "pass",
+      "http_status": 200
+    },
+    {
+      "case": "invalid page",
+      "status": "pass",
+      "http_status": 422
+    },
+    {
+      "case": "blank query",
+      "status": "pass",
+      "http_status": 422
+    },
+    {
+      "case": "search budget enforced",
+      "status": "pass",
+      "http_status": 422
+    },
+    {
+      "case": "arbitrary URL rejected",
+      "status": "pass",
+      "http_status": 422
+    },
+    {
+      "case": "missing public book",
+      "status": "pass",
+      "http_status": 404
+    },
+    {
+      "case": "OpenAPI published",
+      "status": "pass",
+      "http_status": 200
+    }
+  ],
+  "samples": {
+    "list": {
+      "items": [
+        {
+          "id": "a-light-in-the-attic_1000",
+          "title": "A Light in the Attic",
+          "price": {
+            "amount": "51.77",
+            "currency": "GBP"
+          },
+          "rating": 3,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+        },
+        {
+          "id": "tipping-the-velvet_999",
+          "title": "Tipping the Velvet",
+          "price": {
+            "amount": "53.74",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html"
+        },
+        {
+          "id": "soumission_998",
+          "title": "Soumission",
+          "price": {
+            "amount": "50.10",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/soumission_998/index.html"
+        },
+        {
+          "id": "sharp-objects_997",
+          "title": "Sharp Objects",
+          "price": {
+            "amount": "47.82",
+            "currency": "GBP"
+          },
+          "rating": 4,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/sharp-objects_997/index.html"
+        },
+        {
+          "id": "sapiens-a-brief-history-of-humankind_996",
+          "title": "Sapiens: A Brief History of Humankind",
+          "price": {
+            "amount": "54.23",
+            "currency": "GBP"
+          },
+          "rating": 5,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html"
+        },
+        {
+          "id": "the-requiem-red_995",
+          "title": "The Requiem Red",
+          "price": {
+            "amount": "22.65",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/the-requiem-red_995/index.html"
+        },
+        {
+          "id": "the-dirty-little-secrets-of-getting-your-dream-job_994",
+          "title": "The Dirty Little Secrets of Getting Your Dream Job",
+          "price": {
+            "amount": "33.34",
+            "currency": "GBP"
+          },
+          "rating": 4,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html"
+        },
+        {
+          "id": "the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993",
+          "title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+          "price": {
+            "amount": "17.93",
+            "currency": "GBP"
+          },
+          "rating": 3,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html"
+        },
+        {
+          "id": "the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992",
+          "title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+          "price": {
+            "amount": "22.60",
+            "currency": "GBP"
+          },
+          "rating": 4,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html"
+        },
+        {
+          "id": "the-black-maria_991",
+          "title": "The Black Maria",
+          "price": {
+            "amount": "52.15",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/the-black-maria_991/index.html"
+        },
+        {
+          "id": "starving-hearts-triangular-trade-trilogy-1_990",
+          "title": "Starving Hearts (Triangular Trade Trilogy, #1)",
+          "price": {
+            "amount": "13.99",
+            "currency": "GBP"
+          },
+          "rating": 2,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html"
+        },
+        {
+          "id": "shakespeares-sonnets_989",
+          "title": "Shakespeare's Sonnets",
+          "price": {
+            "amount": "20.66",
+            "currency": "GBP"
+          },
+          "rating": 4,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/shakespeares-sonnets_989/index.html"
+        },
+        {
+          "id": "set-me-free_988",
+          "title": "Set Me Free",
+          "price": {
+            "amount": "17.46",
+            "currency": "GBP"
+          },
+          "rating": 5,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/set-me-free_988/index.html"
+        },
+        {
+          "id": "scott-pilgrims-precious-little-life-scott-pilgrim-1_987",
+          "title": "Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)",
+          "price": {
+            "amount": "52.29",
+            "currency": "GBP"
+          },
+          "rating": 5,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html"
+        },
+        {
+          "id": "rip-it-up-and-start-again_986",
+          "title": "Rip it Up and Start Again",
+          "price": {
+            "amount": "35.02",
+            "currency": "GBP"
+          },
+          "rating": 5,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/rip-it-up-and-start-again_986/index.html"
+        },
+        {
+          "id": "our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985",
+          "title": "Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991",
+          "price": {
+            "amount": "57.25",
+            "currency": "GBP"
+          },
+          "rating": 3,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html"
+        },
+        {
+          "id": "olio_984",
+          "title": "Olio",
+          "price": {
+            "amount": "23.88",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/olio_984/index.html"
+        },
+        {
+          "id": "mesaerion-the-best-science-fiction-stories-1800-1849_983",
+          "title": "Mesaerion: The Best Science Fiction Stories 1800-1849",
+          "price": {
+            "amount": "37.59",
+            "currency": "GBP"
+          },
+          "rating": 1,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html"
+        },
+        {
+          "id": "libertarianism-for-beginners_982",
+          "title": "Libertarianism for Beginners",
+          "price": {
+            "amount": "51.33",
+            "currency": "GBP"
+          },
+          "rating": 2,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/libertarianism-for-beginners_982/index.html"
+        },
+        {
+          "id": "its-only-the-himalayas_981",
+          "title": "It's Only the Himalayas",
+          "price": {
+            "amount": "45.17",
+            "currency": "GBP"
+          },
+          "rating": 2,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html"
+        }
+      ],
+      "page": 1,
+      "total_pages": 50,
+      "total_items": 1000,
+      "next_page": 2,
+      "previous_page": null,
+      "source": {
+        "mode": "live",
+        "source_url": "https://books.toscrape.com/",
+        "fetched_at": "2026-10-03T14:22:07.617706Z",
+        "cache_hit": false
+      }
+    },
+    "detail": {
+      "item": {
+        "id": "a-light-in-the-attic_1000",
+        "title": "A Light in the Attic",
+        "price": {
+          "amount": "51.77",
+          "currency": "GBP"
+        },
+        "rating": 3,
+        "in_stock": true,
+        "source_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+        "upc": "a897fe39b1053632",
+        "category": {
+          "id": "poetry_23",
+          "name": "Poetry",
+          "source_url": "https://books.toscrape.com/catalogue/category/books/poetry_23/index.html"
+        },
+        "description": "It's hard to imagine a world without A Light in the Attic. This now-classic collection of poetry and drawings from Shel Silverstein celebrates its 20th anniversary with this special edition. Silverstein's humorous and creative verse can amuse the dowdiest of readers. Lemon-faced adults and fidgety kids sit still and read these rhythmic words and laugh and smile and love th It's hard to imagine a world without A Light in the Attic. This now-classic collection of poetry and drawings from Shel Silverstein celebrates its 20th anniversary with this special edition. Silverstein's humorous and creative verse can amuse the dowdiest of readers. Lemon-faced adults and fidgety kids sit still and read these rhythmic words and laugh and smile and love that Silverstein. Need proof of his genius? RockabyeRockabye baby, in the treetopDon't you know a treetopIs no safe place to rock?And who put you up there,And your cradle, too?Baby, I think someone down here'sGot it in for you. Shel, you never sounded so good. ...more",
+        "stock_count": 22,
+        "price_excl_tax": {
+          "amount": "51.77",
+          "currency": "GBP"
+        },
+        "tax": {
+          "amount": "0.00",
+          "currency": "GBP"
+        },
+        "review_count": 0
+      },
+      "source": {
+        "mode": "live",
+        "source_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+        "fetched_at": "2026-10-03T14:22:11.139747Z",
+        "cache_hit": false
+      }
+    },
+    "search": {
+      "query": "A LIGHT IN THE ATTIC",
+      "items": [
+        {
+          "id": "a-light-in-the-attic_1000",
+          "title": "A Light in the Attic",
+          "price": {
+            "amount": "51.77",
+            "currency": "GBP"
+          },
+          "rating": 3,
+          "in_stock": true,
+          "source_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+        }
+      ],
+      "matched_in_scan": 1,
+      "start_page": 1,
+      "scanned_pages": 2,
+      "total_source_pages": 50,
+      "next_page": 3,
+      "complete": false,
+      "sources": [
+        {
+          "mode": "live",
+          "source_url": "https://books.toscrape.com/",
+          "fetched_at": "2026-10-03T14:22:07.617706Z",
+          "cache_hit": true
+        },
+        {
+          "mode": "live",
+          "source_url": "https://books.toscrape.com/catalogue/page-2.html",
+          "fetched_at": "2026-10-03T14:22:08.216550Z",
+          "cache_hit": true
+        }
+      ],
+      "note": "Title substring matches in the scanned pages only; source order is preserved."
+    }
+  }
+}
