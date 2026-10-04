@@ -8,7 +8,14 @@ The site is a fictional bookstore published for scraping practice. No documented
 
 ## Run the complete demonstration
 
-Use **Python 3.12** (tested). The code requires Python 3.11 or newer. No API key, account, database or paid service is needed. Run commands from the extracted `bookbridge` directory.
+Use **Python 3.12** (tested). The code requires Python 3.11 or newer. No API key, account, database or paid service is needed. Clone the repository and run commands from its root:
+
+```bash
+git clone https://github.com/Sankalp-gupta1/bookbridge-api.git
+cd bookbridge-api
+```
+
+If using the submission ZIP instead, run commands from its extracted `bookbridge` directory.
 
 ### Windows PowerShell
 
@@ -145,4 +152,4 @@ docker build -t bookbridge .
 docker run --rm -p 127.0.0.1:8000:8000 bookbridge
 ```
 
-The Dockerfile uses a non-root user and pinned Python dependencies. Docker execution is not included in the recorded validation because Docker was unavailable in the build environment. The GitHub Actions workflow is provided; it has not been run on a remote repository.
+The Dockerfile uses a non-root user and pinned Python dependencies. Docker execution is not included in the recorded validation because Docker was unavailable in the build environment. The [GitHub Actions workflow passed on 4 October 2026](https://github.com/Sankalp-gupta1/bookbridge-api/actions/runs/37183612280), including lint, formatting, tests and the fixture HTTP demo.

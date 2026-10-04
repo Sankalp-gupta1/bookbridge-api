@@ -11,6 +11,9 @@ Validated on **3 October 2026** with Python **3.12.14** on Linux.
 | Ruff formatting | Passed | `ruff format --check .` |
 | Dependency consistency | No broken requirements | `python -m pip check` |
 | OpenAPI export | Generated from the actual FastAPI app | `docs/openapi.json` |
+| Remote GitHub Actions | Passed on 4 October 2026: dependency installation, Ruff lint/formatting, pytest and fixture HTTP demo | [Successful run](https://github.com/Sankalp-gupta1/bookbridge-api/actions/runs/37183612280) |
+
+The remote run verified commit `091c44ffa259761e564651e0ead5efa5ce0b2ec3`. All 40 uploaded files were also compared with the tested submission ZIP using Git blob hashes; every file matched before this publication note was added.
 
 Live smoke completed at **2026-10-03 14:22:12 UTC**. It observed 50 categories and checked catalogue pagination, a detail record, cached responses, partial search, complete category search, invalid inputs and a genuine upstream 404. The report includes actual JSON responses. This is a time-stamped observation, not a guarantee that a third-party site will remain unchanged.
 
@@ -18,6 +21,6 @@ The deterministic suite includes simulated 429/5xx, network timeouts, robots den
 
 One upstream deprecation warning is emitted by the pinned Starlette TestClient when using HTTPX. Tests pass with this combination; the warning is not suppressed. Runtime HTTP calls use HTTPX directly. Dependency upgrades should be tested rather than applied blindly.
 
-**Not executed:** Docker image build/run, remote GitHub Actions, Windows execution, production load testing, Agent Studio integration or paid services. Windows commands are supplied as standard virtual-environment instructions; only Linux execution was recorded. No model-quality or business-impact metric is claimed.
+**Not executed:** Docker image build/run, Windows execution, production load testing, Agent Studio integration or paid services. Windows commands are supplied as standard virtual-environment instructions; only Linux execution was recorded. No model-quality or business-impact metric is claimed.
 
 To reproduce, install `requirements-dev.txt`, run `python -m pytest -q`, then run `python scripts/demo.py --mode fixture` and, with internet access, `python scripts/demo.py --mode live`. Each script exits nonzero on failure.
