@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BookBridge — a clean browser for a typed read-only bookstore API.">
+  <title>BookBridge — Catalogue Explorer</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="BookBridge home">
+        <span class="brand-mark">B</span>
+        <span><strong>BookBridge</strong><small>Catalogue Explorer</small></span>
+      </a>
+      <nav class="nav">
+        <a href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+        <a href="/openapi.json" target="_blank" rel="noreferrer">OpenAPI</a>
+        <a href="https://github.com/Sankalp-gupta1/bookbridge-api" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Reverse-engineered API · deterministic public demo</span>
+          <h1>Browse a bookstore through a <em>clean typed API.</em></h1>
+          <p>Search titles, inspect book details and explore categories without touching raw catalogue HTML. The hosted demo runs from captured fixtures, so results are stable and no external credentials are required.</p>
+        </div>
+        <div class="hero-card">
+          <div class="status-line"><span class="pulse"></span><span id="healthText">Checking API…</span></div>
+          <dl>
+            <div><dt>Mode</dt><dd id="modeValue">—</dd></div>
+            <div><dt>Contract</dt><dd>Read-only</dd></div>
+            <div><dt>Money</dt><dd>Exact strings</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar panel">
+          <div class="panel-title"><span>Categories</span><button id="clearCategory" class="text-button" type="button">All books</button></div>
+          <div id="categoryList" class="category-list">
+            <div class="skeleton row"></div><div class="skeleton row"></div><div class="skeleton row"></div>
+          </div>
+          <div class="sidebar-note"><strong>Fixture demo</strong><p>The production demo intentionally uses repository fixtures instead of live scraping. API behavior and parsing logic remain the same.</p></div>
+        </aside>
+
+        <section class="content">
+          <div class="search-panel panel">
+            <div class="search-row">
+              <div class="search-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+                <input id="searchInput" type="search" placeholder="Search titles…" autocomplete="off">
+              </div>
+              <button id="searchButton" class="primary-button" type="button">Search</button>
+            </div>
+            <div class="meta-row"><span id="resultLabel">Loading catalogue…</span><span id="sourceLabel"></span></div>
+          </div>
+
+          <div id="notice" class="notice hidden" role="status"></div>
+          <div id="bookGrid" class="book-grid" aria-live="polite"></div>
+
+          <div class="pagination">
+            <button id="prevButton" class="secondary-button" type="button">← Previous</button>
+            <span id="pageLabel">Page —</span>
+            <button id="nextButton" class="secondary-button" type="button">Next →</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="engineering panel">
+        <div><span class="eyebrow">Why this project matters</span><h2>Small API, production-minded boundaries.</h2></div>
+        <div class="feature-grid">
+          <article><strong>Typed contract</strong><p>Pydantic response models, explicit money types and structured errors.</p></article>
+          <article><strong>Safe source adapter</strong><p>Fixed origin, robots checks, bounded retries, redirect refusal and response limits.</p></article>
+          <article><strong>Deterministic demo</strong><p>Captured fixtures make the public deployment reliable without an API key or database.</p></article>
+          <article><strong>Verified behavior</strong><p>Automated tests cover parsing drift, invalid input, caching, retries and failure paths.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Built by Sankalp Gupta</span><span>FastAPI · Pydantic · BeautifulSoup · Vercel</span></footer>
+  </div>
+
+  <dialog id="detailDialog">
+    <button id="closeDialog" class="dialog-close" aria-label="Close">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
