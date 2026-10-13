@@ -11,8 +11,9 @@ from uuid import uuid4
 from fastapi import FastAPI, Query, Request
 from fastapi import Path as PathParam
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse, RedirectResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.routing import APIRoute
+from fastapi.staticfiles import StaticFiles
 
 from app.errors import ApiError
 from app.models import BookPage, BookResult, CategoryList, ErrorResponse, SearchResult
@@ -79,6 +80,8 @@ def create_app(settings: Settings | None = None, source: CatalogueSource | None 
         responses={code: {"model": ErrorResponse} for code in (404, 422, 429, 502, 503, 504)},
     )
     app.router.route_class = DeadlineRoute
+    static_dir = Path(__file__).resolve().parent / "static"
+    app.mount("/assets", StaticFiles(directory=static_dir), name="assets")
 
     @app.exception_handler(ApiError)
     async def api_error_handler(request: Request, exc: ApiError):
@@ -123,7 +126,7 @@ def create_app(settings: Settings | None = None, source: CatalogueSource | None 
 
     @app.get("/", include_in_schema=False)
     async def root():
-        return RedirectResponse("/docs")
+        return FileResponse(static_dir / "index.html")
 
     @app.get("/health", tags=["Operations"])
     async def health():
